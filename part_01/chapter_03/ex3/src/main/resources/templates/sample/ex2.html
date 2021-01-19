@@ -7,8 +7,14 @@
 </head>
 
 <body>
+<style>
+    .target{
+    background-color: red;
+    }
+</style>
 <ul>
-    <li th:each="dto, state : ${List}" th:class="${dto.sno % 5 == 0}?'target'" th:text="${dto}">
+    <li th:each="dto : ${List}">
+        [[${dto.sno}]] --- [[${#temporals.format(dto.regTime, 'yyyy/MM/dd')}]]
     </li>
 </ul>
 </body>
